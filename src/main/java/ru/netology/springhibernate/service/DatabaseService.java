@@ -13,7 +13,6 @@ public class DatabaseService {
     private PersonsRepository personsRepository;
 
     public List<Person> getPersonsByCity(String city) {
-
         return personsRepository.getPersonsByCity(city);
     }
 }

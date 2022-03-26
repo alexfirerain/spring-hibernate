@@ -5,3 +5,28 @@ Accept: application/json
 ### query for Москва
 GET http://localhost:8080/persons/by-city?city=Москва
 Accept: application/json
+
+### query for Кемерово
+GET http://localhost:8080/persons/by-city?city=Кемерово
+Accept: application/json
+
+### query for Воркута
+GET http://localhost:8080/persons/by-city?city=Воркута
+Accept: application/json
+
+### query for Чита
+GET http://localhost:8080/persons/by-city?city=Чита
+Accept: application/json
+
+### query for Новосибирск
+GET http://localhost:8080/persons/by-city?city=Новосибирск
+Accept: application/json
+
+### query for Киев
+GET http://localhost:8080/persons/by-city?city=Киев
+Accept: application/json
+
+### query for Оренбург (not in list)
+GET http://localhost:8080/persons/by-city?city=Оренбург
+Accept: application/json
+

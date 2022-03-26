@@ -1,15 +1,15 @@
 package ru.netology.springhibernate.entity;
 
-import lombok.EqualsAndHashCode;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import java.io.Serializable;
 
+@Data
 @Embeddable
 @NoArgsConstructor
-@EqualsAndHashCode
 public class Personality implements Serializable {
     @Column(nullable = false)
     private String name;
@@ -18,7 +18,5 @@ public class Personality implements Serializable {
     private String surname;
 
     private int age;
-
-
 
 }

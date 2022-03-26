@@ -1,15 +1,20 @@
 package ru.netology.springhibernate.entity;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+import org.hibernate.Hibernate;
 
-import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import java.util.Objects;
 
-@Data
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
 @Entity
-@NoArgsConstructor
 public class Person {
 
     @EmbeddedId
@@ -19,4 +24,16 @@ public class Person {
 
     private String cityOfLiving;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        Person person = (Person) o;
+        return physicalEntity != null && Objects.equals(physicalEntity, person.physicalEntity);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(physicalEntity);
+    }
 }
