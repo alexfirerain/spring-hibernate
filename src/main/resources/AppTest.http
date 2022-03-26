@@ -1,0 +1,7 @@
+### query for Донецк
+GET http://localhost:8080/persons/by-city?city=Донецк
+Accept: application/json
+
+### query for Москва
+GET http://localhost:8080/persons/by-city?city=Москва
+Accept: application/json
