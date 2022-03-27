@@ -1,4 +1,8 @@
 databaseChangeLog:
   - include:
+      file: migrations/table_init.sql
+      relativeToChangelogFile: yes
+
+  - include:
       file: migrations/persons_init.sql
       relativeToChangelogFile: yes

@@ -5,9 +5,11 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.Hibernate;
+import org.springframework.validation.annotation.Validated;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.validation.Valid;
 import java.util.Objects;
 
 @Getter
@@ -15,8 +17,10 @@ import java.util.Objects;
 @ToString
 @RequiredArgsConstructor
 @Entity
+@Validated
 public class Person {
 
+    @Valid
     @EmbeddedId
     private Personality physicalEntity;
 
