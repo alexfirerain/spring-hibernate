@@ -17,10 +17,8 @@ import java.util.Objects;
 @ToString
 @RequiredArgsConstructor
 @Entity
-@Validated
 public class Person {
 
-    @Valid
     @EmbeddedId
     private Personality physicalEntity;
 
