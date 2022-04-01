@@ -5,11 +5,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.Hibernate;
-import org.springframework.validation.annotation.Validated;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.validation.Valid;
 import java.util.Objects;
 
 @Getter
@@ -39,3 +37,4 @@ public class Person {
         return Objects.hash(physicalEntity);
     }
 }
+    
