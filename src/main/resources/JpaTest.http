@@ -1,0 +1,12 @@
+### query for Донецк
+GET http://localhost:8080/persons/by-city?city=Донецк
+Accept: application/json
+
+### query for Новосибирск
+GET http://localhost:8080/persons/by-city?city=Новосибирск
+Accept: application/json
+
+### query for Оренбург (not in list)
+GET http://localhost:8080/persons/by-city?city=Оренбург
+Accept: application/json
+

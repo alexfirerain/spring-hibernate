@@ -15,7 +15,7 @@ public class DataAccessController {
     private DatabaseService personsService;
 
     @GetMapping("/persons/by-city")
-    public List<Person> getPersonsByCity(@RequestParam String city) {
-        return personsService.getPersonsByCity(city);
+    public List<Person> getByCity(@RequestParam String city) {
+        return personsService.getByCity(city);
     }
 }
