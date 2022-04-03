@@ -19,12 +19,18 @@ public class DataAccessController {
     private DatabaseService personsService;
 
     @GetMapping("/by-city")
-    public List<Person> getByCity(@RequestParam String city) {
+    public List<Person> getByCity(@RequestParam String city) throws PersonNotFoundException {
+        List<Person> byCityFound = personsService.getByCity(city);
+        if (byCityFound.isEmpty())
+            throw new PersonNotFoundException("Лиц из города " + city + " не найдено!");
         return personsService.getByCity(city);
     }
 
     @GetMapping("/under-age")
-    public List<Person> getUnderAge(@RequestParam int age) {
+    public List<Person> getUnderAge(@RequestParam int age) throws PersonNotFoundException {
+        List<Person> youngerFound = personsService.getYoungerThan(age);
+        if (youngerFound.isEmpty())
+            throw new PersonNotFoundException("Не обнаружено никого моложе " + age + " лет!");
         return personsService.getYoungerThan(age);
     }
 
@@ -39,19 +45,25 @@ public class DataAccessController {
     }
 
     @GetMapping("/add")
-    public void addAPerson(@RequestParam String name,
+    public String addAPerson(@RequestParam String name,
                            @RequestParam String surname,
                            @RequestParam int age,
                            @RequestParam String phoneNumber,
                            @RequestParam String cityOfLiving) {
-        personsService.save(new Person(new Personality(name, surname, age), phoneNumber, cityOfLiving));
+        return "Добавлено лицо:\n"
+                + personsService.save(new Person
+                            (new Personality(name, surname, age),
+                            phoneNumber,
+                            cityOfLiving));
     }
 
     @GetMapping("/delete")
-    public void removeAPerson(@RequestParam String name,
-                              @RequestParam String surname,
-                              @RequestParam int age) {
-        personsService.delete(new Personality(name, surname, age));
+    public String removeAPerson(@RequestParam String name,
+                                @RequestParam String surname,
+                                @RequestParam int age) {
+        Personality idToDelete = new Personality(name, surname, age);
+        personsService.delete(idToDelete);
+        return "Удалено лицо: " + idToDelete;
     }
 
 }

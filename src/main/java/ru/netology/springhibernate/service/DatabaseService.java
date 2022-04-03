@@ -31,8 +31,8 @@ public class DatabaseService {
         return personRepository.findAll();
     }
 
-    public void save(Person personToAdd) {
-        personRepository.save(personToAdd);
+    public Person save(Person personToAdd) {
+        return personRepository.save(personToAdd);
     }
 
     public void delete(Personality personalityToRemove) {
