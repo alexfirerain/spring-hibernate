@@ -1,9 +1,6 @@
 package ru.netology.springhibernate.entity;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import org.hibernate.Hibernate;
 
 import javax.persistence.EmbeddedId;
@@ -15,6 +12,7 @@ import java.util.Objects;
 @ToString
 @RequiredArgsConstructor
 @Entity
+@AllArgsConstructor
 public class Person {
 
     @EmbeddedId

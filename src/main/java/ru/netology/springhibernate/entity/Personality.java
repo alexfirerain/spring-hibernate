@@ -1,5 +1,6 @@
 package ru.netology.springhibernate.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,6 +12,7 @@ import java.io.Serializable;
 @Data
 @Embeddable
 @NoArgsConstructor
+@AllArgsConstructor
 public class Personality implements Serializable {
     @Column(nullable = false)
     private String name;

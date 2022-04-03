@@ -1,0 +1,346 @@
+GET http://localhost:8080/persons/by-full-name?name=Серж&surname=Петров
+Accept: application/json
+
+<> 2022-04-03T172814.404.json
+
+###
+
+GET http://localhost:8080/persons/delete?name=Серж&surname=Петров&age=31
+Accept: application/json
+
+###
+
+GET http://localhost:8080/persons
+Accept: application/json
+
+<> 2022-04-03T172652.200.json
+
+###
+
+GET http://localhost:8080/persons/by-full-name?name=Серж&surname=Петров
+Accept: application/json
+
+<> 2022-04-03T172645.200.json
+
+###
+
+GET http://localhost:8080/persons/add?name=Серж&surname=Петров&age=31&phoneNumber=5546781&cityOfLiving=Нарва
+Accept: application/json
+
+###
+
+GET http://localhost:8080/persons/by-full-name?name=Серж&surname=Петров
+Accept: application/json
+
+<> 2022-04-03T172302.404.json
+
+###
+
+GET http://localhost:8080/persons
+Accept: application/json
+
+<> 2022-04-03T171906.200.json
+
+###
+
+GET http://localhost:8080/persons
+Accept: application/json
+
+<> 2022-04-03T171542.404.json
+
+###
+
+GET http://localhost:8080/persons/under-age?age=30
+Accept: application/json
+
+<> 2022-04-03T171530.200.json
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Новосибирск
+Accept: application/json
+
+<> 2022-04-03T171452.200.json
+
+###
+
+GET http://localhost:8080/persons
+Accept: application/json
+
+<> 2022-04-03T171433.404.json
+
+###
+
+GET http://localhost:8080/persons
+Accept: application/json
+
+<> 2022-04-03T171304.404.json
+
+###
+
+GET http://localhost:8080/persons/by-full-name?name=Серж&surname=Петров
+Accept: application/json
+
+<> 2022-04-03T165235.404.json
+
+###
+
+GET http://localhost:8080/persons/by-full-name?name=Александр&surname=Ваганов
+Accept: application/json
+
+<> 2022-04-03T165142.200.json
+
+###
+
+GET http://localhost:8080/persons/under-age?age=30
+Accept: application/json
+
+<> 2022-04-03T164951.200.json
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Донецк
+Accept: application/json
+
+<> 2022-04-03T164939.200.json
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Донецк
+Accept: application/json
+
+<> 2022-03-28T151609.200.json
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Киев
+Accept: application/json
+
+<> 2022-03-28T030350.200.json
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Донецк
+Accept: application/json
+
+<> 2022-03-28T030336.200.json
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Москва
+Accept: application/json
+
+<> 2022-03-28T021123.200.json
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Донецк
+Accept: application/json
+
+<> 2022-03-28T020938.200.json
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Донецк
+Accept: application/json
+
+<> 2022-03-28T020814.200.json
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Москва
+Accept: application/json
+
+<> 2022-03-28T020513.200.json
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Москва
+Accept: application/json
+
+<> 2022-03-28T020134.200.json
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Донецк
+Accept: application/json
+
+<> 2022-03-28T015727.200.json
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Оренбург
+Accept: application/json
+
+<> 2022-03-28T015711.200.json
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Чита
+Accept: application/json
+
+<> 2022-03-28T015623.200.json
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Чита
+Accept: application/json
+
+<> 2022-03-27T114959.200.json
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Воркута
+Accept: application/json
+
+<> 2022-03-27T112823.200.json
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Воркута
+Accept: application/json
+
+<> 2022-03-27T112752.200.json
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Оренбург
+Accept: application/json
+
+<> 2022-03-27T014740.200.json
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Москва
+Accept: application/json
+
+<> 2022-03-27T014708.200.json
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Чита
+Accept: application/json
+
+<> 2022-03-27T014431.200.json
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Киев
+Accept: application/json
+
+<> 2022-03-27T014417.200.json
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Оренбург
+Accept: application/json
+
+<> 2022-03-27T014411.200.json
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Оренбург
+Accept: application/json
+
+<> 2022-03-27T013714.200.json
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Киев
+Accept: application/json
+
+<> 2022-03-27T013702.200.json
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Чита
+Accept: application/json
+
+<> 2022-03-27T013643.200.json
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Воркута
+Accept: application/json
+
+<> 2022-03-27T013625.200.json
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Донецк
+Accept: application/json
+
+<> 2022-03-27T013602.200.json
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Кемерово
+Accept: application/json
+
+<> 2022-03-27T013554.200.json
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Донецк
+Accept: application/json
+
+<> 2022-03-27T012202.200.json
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Новосибирск
+Accept: application/json
+
+<> 2022-03-27T012011.200.json
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Новосибирск
+Accept: application/json
+
+<> 2022-03-27T011625.200.json
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Киев
+Accept: application/json
+
+<> 2022-03-27T011424.200.json
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Новосибирск
+Accept: application/json
+
+<> 2022-03-27T010707.200.json
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Новосибирск
+Accept: application/json
+
+<> 2022-03-27T010433.200.json
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Киев
+Accept: application/json
+
+<> 2022-03-27T010429.200.json
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Оренбург
+Accept: application/json
+
+<> 2022-03-27T010425.200.json
+
+###
+
+GET http://localhost:8080/persons/by-city?city=Новосибирск
+Accept: application/json
+
+<> 2022-03-27T005052.200.json
+
+###
+

@@ -1,3 +1,7 @@
+### query for all
+GET http://localhost:8080/persons
+Accept: application/json
+
 ### query for Донецк
 GET http://localhost:8080/persons/by-city?city=Донецк
 Accept: application/json
@@ -10,3 +14,22 @@ Accept: application/json
 GET http://localhost:8080/persons/by-city?city=Оренбург
 Accept: application/json
 
+### query for age under 30
+GET http://localhost:8080/persons/under-age?age=30
+Accept: application/json
+
+### query for Александр Ваганов
+GET http://localhost:8080/persons/by-full-name?name=Александр&surname=Ваганов
+Accept: application/json
+
+### query for Серж Петров (initially not in list)
+GET http://localhost:8080/persons/by-full-name?name=Серж&surname=Петров
+Accept: application/json
+
+### query to add Серж Петров
+GET http://localhost:8080/persons/add?name=Серж&surname=Петров&age=31&phoneNumber=5546781&cityOfLiving=Нарва
+Accept: application/json
+
+### query to delete Серж Петров
+GET http://localhost:8080/persons/delete?name=Серж&surname=Петров&age=31
+Accept: application/json
