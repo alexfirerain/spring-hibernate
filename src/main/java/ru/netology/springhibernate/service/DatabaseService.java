@@ -15,15 +15,15 @@ public class DatabaseService {
     private PersonRepository personRepository;
 
     public List<Person> getByCity(String city) {
-        return personRepository.findByCityOfLiving(city);
+        return personRepository.findByCity(city);
     }
 
     public List<Person> getYoungerThan(int age) {
-        return personRepository.findByPhysicalEntityAgeLessThanOrderByPhysicalEntityAge(age);
+        return personRepository.findYoungerThanOrdered(age);
     }
 
     public Person getByFullName(String name, String surname) throws PersonNotFoundException {
-        return personRepository.findByPhysicalEntityNameAndPhysicalEntitySurname(name, surname)
+        return personRepository.findByNameAndSurname(name, surname)
                 .orElseThrow(() -> new PersonNotFoundException("Лицо не найдено."));
     }
 
