@@ -17,13 +17,13 @@ public class ExceptionsHandler {
     }
 
     @ExceptionHandler(EmptyResultDataAccessException.class)
-    public ResponseEntity<String> PNFHandler(EmptyResultDataAccessException erdae) {
+    public ResponseEntity<String> ERDAHandler(EmptyResultDataAccessException erdae) {
         return ResponseEntity.status(HttpStatus.METHOD_NOT_ALLOWED)
                 .body("Невозможно обработать запрос: " + erdae.getLocalizedMessage());
     }
 
     @ExceptionHandler(IncorrectResultSizeDataAccessException.class)
-    public ResponseEntity<String> PNFHandler(IncorrectResultSizeDataAccessException irsde) {
+    public ResponseEntity<String> IRSDAHandler(IncorrectResultSizeDataAccessException irsde) {
         return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY)
                 .body("Неоднозначный запрос: " + irsde.getLocalizedMessage());
     }
