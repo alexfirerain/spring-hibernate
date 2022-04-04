@@ -16,7 +16,7 @@ public interface PersonRepository extends JpaRepository<Person, Personality> {
     @Query("select p from Person p where p.cityOfLiving = :city")
     List<Person> findByCity(@Param("city") String city);
 
-    @Query("select p from Person p where p.physicalEntity.age < :age")
+    @Query("select p from Person p where p.physicalEntity.age < :age order by p.physicalEntity.age")
     List<Person> findYoungerThanOrdered(@Param("age") int age);
 
     @Query("select p from Person p where p.physicalEntity.name = :name and p.physicalEntity.surname = :surname")
