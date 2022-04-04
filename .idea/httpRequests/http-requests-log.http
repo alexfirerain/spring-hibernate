@@ -1,3 +1,24 @@
+GET http://localhost:8080/persons/add?name=Серж&surname=Петров&age=31&phoneNumber=5546781&cityOfLiving=Нарва
+Accept: application/json
+
+<> 2022-04-04T020259.200.json
+
+###
+
+GET http://localhost:8080/persons/add?name=Серж&surname=Петров&age=31&phoneNumber=5546781&cityOfLiving=Нарва
+Accept: application/json
+
+<> 2022-04-04T020139.200.json
+
+###
+
+GET http://localhost:8080/persons/add?name=Серж&surname=Петров&age=31&phoneNumber=5546781&cityOfLiving=Нарва
+Accept: application/json
+
+<> 2022-04-04T020107.200.json
+
+###
+
 GET http://localhost:8080/persons/by-full-name?name=Серж&surname=Петров
 Accept: application/json
 
@@ -320,27 +341,6 @@ GET http://localhost:8080/persons/by-city?city=Воркута
 Accept: application/json
 
 <> 2022-03-27T112752.200.json
-
-###
-
-GET http://localhost:8080/persons/by-city?city=Оренбург
-Accept: application/json
-
-<> 2022-03-27T014740.200.json
-
-###
-
-GET http://localhost:8080/persons/by-city?city=Москва
-Accept: application/json
-
-<> 2022-03-27T014708.200.json
-
-###
-
-GET http://localhost:8080/persons/by-city?city=Чита
-Accept: application/json
-
-<> 2022-03-27T014431.200.json
 
 ###
 
