@@ -13,4 +13,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .withUser("Slave").password("{noop}psw").authorities("read");
     }
+
+
 }
