@@ -11,8 +11,11 @@ import java.util.List;
 
 @Service
 public class DatabaseService {
-    @Autowired
-    private PersonRepository personRepository;
+    private final PersonRepository personRepository;
+
+    public DatabaseService(PersonRepository personRepository) {
+        this.personRepository = personRepository;
+    }
 
     public List<Person> getByCity(String city) {
         return personRepository.findByCityOfLiving(city);

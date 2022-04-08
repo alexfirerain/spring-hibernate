@@ -1,10 +1,8 @@
 package ru.netology.springhibernate.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 import ru.netology.springhibernate.entity.Person;
 import ru.netology.springhibernate.entity.Personality;
 import ru.netology.springhibernate.exception.PersonNotFoundException;
@@ -15,8 +13,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/persons")
 public class DataAccessController {
-    @Autowired
-    private DatabaseService personsService;
+    private final DatabaseService personsService;
+
+    public DataAccessController(DatabaseService personsService) {
+        this.personsService = personsService;
+    }
 
     @GetMapping("/by-city")
     public List<Person> getByCity(@RequestParam String city) throws PersonNotFoundException {
@@ -44,6 +45,7 @@ public class DataAccessController {
         return personsService.showAll();
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @GetMapping("/add")
     public String addAPerson(@RequestParam String name,
                            @RequestParam String surname,
