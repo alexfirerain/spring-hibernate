@@ -1,7 +1,7 @@
 package ru.netology.springhibernate.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 import ru.netology.springhibernate.entity.Person;
 import ru.netology.springhibernate.entity.Personality;
@@ -36,7 +36,7 @@ public class DataAccessController {
     }
 
     @GetMapping("/by-full-name")
-    public Person getByCity(@RequestParam String name, @RequestParam String surname) throws PersonNotFoundException {
+    public Person getByFullName(@RequestParam String name, @RequestParam String surname) throws PersonNotFoundException {
         return personsService.getByFullName(name, surname);
     }
 
@@ -60,6 +60,7 @@ public class DataAccessController {
     }
 
     @GetMapping("/delete")
+    @Secured("ROLE_ADMIN")
     public String removeAPerson(@RequestParam String name,
                                 @RequestParam String surname,
                                 @RequestParam int age) {
