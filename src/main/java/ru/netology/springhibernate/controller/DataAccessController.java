@@ -1,6 +1,5 @@
 package ru.netology.springhibernate.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import ru.netology.springhibernate.entity.Person;
@@ -36,7 +35,7 @@ public class DataAccessController {
     }
 
     @GetMapping("/by-full-name")
-    public Person getByCity(@RequestParam String name, @RequestParam String surname) throws PersonNotFoundException {
+    public Person getByFullName(@RequestParam String name, @RequestParam String surname) throws PersonNotFoundException {
         return personsService.getByFullName(name, surname);
     }
 
