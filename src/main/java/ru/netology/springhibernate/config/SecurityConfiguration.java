@@ -7,14 +7,20 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 @Configuration
-@EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true)
+@EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true, jsr250Enabled = true)
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
-                .withUser("Master").password("{noop}password").roles("ADMIN", "GUEST")
+                .withUser("Master").password("{noop}password").roles("READ", "WRITE", "DELETE")
                 .and()
-                .withUser("Slave").password("{noop}psw").roles("GUEST");
+                .withUser("Hacker").password("{noop}holybible").roles("WRITE", "DELETE")
+                .and()
+                .withUser("Assistant").password("{noop}assword").roles("READ", "WRITE")
+                .and()
+                .withUser("Guest").password("{noop}gword").roles("READ")
+                .and()
+                .withUser("Slave").password("{noop}psw").roles("WRITE");
     }
 
     @Override
@@ -25,8 +31,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         .permitAll()
 
                 .and().authorizeRequests()
-                        .antMatchers("/persons/delete", "/persons", "/persons/")
-                        .hasAnyRole("ADMIN")
+                        .antMatchers("/persons/delete")
+                        .hasAnyRole("DELETE")
 
                 .and().authorizeRequests()
                         .anyRequest()

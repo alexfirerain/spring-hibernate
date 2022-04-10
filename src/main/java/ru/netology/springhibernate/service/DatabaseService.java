@@ -34,11 +34,23 @@ public class DatabaseService {
         return personRepository.findAll();
     }
 
-    public Person save(Person personToAdd) {
-        return personRepository.save(personToAdd);
+    public Person save(Person personToSave) {
+        return personRepository.save(personToSave);
     }
 
     public void delete(Personality personalityToRemove) {
         personRepository.deleteById(personalityToRemove);
     }
+
+    public long count() {
+        return personRepository.count();
+    }
+
+    public Person get(Personality id) throws PersonNotFoundException {
+        Person x = personRepository.getById(id);
+        if (x == null) throw new PersonNotFoundException("Такого лица не найдено.");
+        return x;
+    }
+
+
 }

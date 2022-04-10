@@ -60,7 +60,7 @@ public class DataAccessController {
     }
 
     @GetMapping("/delete")
-    @Secured("ROLE_ADMIN")
+    @Secured("ROLE_DELETE")
     public String removeAPerson(@RequestParam String name,
                                 @RequestParam String surname,
                                 @RequestParam int age) {
