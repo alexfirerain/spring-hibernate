@@ -16,4 +16,5 @@ public interface PersonRepository extends JpaRepository<Person, Personality> {
 
     Optional<Person> findByPhysicalEntityNameAndPhysicalEntitySurname(String name, String surname) throws PersonNotFoundException;
 
+    List<Person> findByPhysicalEntityName(String name);
 }

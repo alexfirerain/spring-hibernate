@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import ru.netology.springhibernate.entity.Person;
 import ru.netology.springhibernate.entity.Personality;
+import ru.netology.springhibernate.exception.PersonNotFoundException;
 import ru.netology.springhibernate.service.DatabaseService;
 
 import javax.annotation.security.RolesAllowed;
@@ -38,9 +39,9 @@ public class SecuredController {
                          @RequestParam(name = "number") String newNumber) {
         Person changing = personsService.get(new Personality(idName, idSurname, idAge));
 
-        if (newCity != null & !newCity.isBlank())
+        if (newCity != null && !newCity.isBlank())
             changing.setCityOfLiving(newCity);
-        if (newNumber != null & !newNumber.isBlank())
+        if (newNumber != null && !newNumber.isBlank())
             changing.setPhoneNumber(newNumber);
 
         return "Обновлены данные: \n" + personsService.save(changing);
@@ -51,5 +52,16 @@ public class SecuredController {
     public List<Person> showAll() {
         return personsService.showAll();
     }
+
+    @GetMapping("/by-name")
+    @PreAuthorize("#username == authentication.principal.username")
+    public List<Person> byNameSecured(@RequestParam String username,
+                                      @RequestParam(name = "name") String queryName) {
+        List<Person> theNamed = personsService.getByName(queryName);
+        if (theNamed.isEmpty())
+            throw new PersonNotFoundException("Нет никого, кто " + queryName + "!");
+        return theNamed;
+    }
+
 
 }

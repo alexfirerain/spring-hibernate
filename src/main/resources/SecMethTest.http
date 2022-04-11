@@ -1,0 +1,25 @@
+### query for everyone (available for writers & deleters)
+GET http://localhost:8080/service/all
+Accept: application/json
+
+### query to count them (available for readers)
+GET http://localhost:8080/service/count
+Accept: application/json
+
+### query just to overasign Ростислав to Новосибирск (available for writers)
+GET http://localhost:8080/service/update?name=Ростислав&surname=Гончар&age=40&city=Новосибирск&number=
+Accept: application/json
+
+### query to overasign Ростислав to Новосибирск with a new phone (available for writers)
+GET http://localhost:8080/service/update?name=Ростислав&surname=Гончар&age=40&city=Новосибирск&number=7814415
+Accept: application/json
+
+### query for Master to check if Серж is there
+GET http://localhost:8080/service/by-name?username=Master&name=Серж
+Accept: application/json
+
+### query for Hacker to check if Искандер is there
+GET http://localhost:8080/service/by-name?username=Hacker&name=Искандер
+Accept: application/json
+
+
