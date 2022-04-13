@@ -31,7 +31,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                         .permitAll()
 
                 .and().authorizeRequests()
-                        .antMatchers("/persons/delete")
+                        .antMatchers("/persons/delete", "/persons", "/persons/")
                         .hasAnyRole("DELETE")
 
                 .and().authorizeRequests()

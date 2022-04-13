@@ -35,8 +35,8 @@ public class SecuredController {
     public String update(@RequestParam(name = "name") String idName,
                          @RequestParam(name = "surname") String idSurname,
                          @RequestParam(name = "age") int idAge,
-                         @RequestParam(name = "city") String newCity,
-                         @RequestParam(name = "number") String newNumber) {
+                         @RequestParam(name = "city", required = false) String newCity,
+                         @RequestParam(name = "number", required = false) String newNumber) {
         Person changing = personsService.get(new Personality(idName, idSurname, idAge));
 
         if (newCity != null && !newCity.isBlank())

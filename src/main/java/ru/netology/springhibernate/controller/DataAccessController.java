@@ -1,7 +1,6 @@
 package ru.netology.springhibernate.controller;
 
 import org.springframework.http.HttpStatus;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 import ru.netology.springhibernate.entity.Person;
 import ru.netology.springhibernate.entity.Personality;
@@ -50,8 +49,8 @@ public class DataAccessController {
     public String addAPerson(@RequestParam String name,
                            @RequestParam String surname,
                            @RequestParam int age,
-                           @RequestParam String phoneNumber,
-                           @RequestParam String cityOfLiving) {
+                           @RequestParam(defaultValue = "-") String phoneNumber,
+                           @RequestParam(defaultValue = "<неизвестен>") String cityOfLiving) {
         return "Добавлено лицо:\n"
                 + personsService.save(new Person
                             (new Personality(name, surname, age),
@@ -60,7 +59,6 @@ public class DataAccessController {
     }
 
     @GetMapping("/delete")
-    @Secured("ROLE_DELETE")
     public String removeAPerson(@RequestParam String name,
                                 @RequestParam String surname,
                                 @RequestParam int age) {
