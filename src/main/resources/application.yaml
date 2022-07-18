@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/persons
+    username: root
+    password: mysql
+
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+
+  liquibase:
+    enabled: false
+
+#  security:
+#    user:
+#      name: supervisor
+#      password: superword

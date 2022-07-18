@@ -1,4 +1,4 @@
-insert into person (age, name, surname, city_of_living, phone_number)
+insert into persons (age, name, surname, city_of_living, phone_number)
 values (20, 'Алексей', 'Сидоренко', 'Донецк','2733460'),
        (25, 'Искандер', 'Алтаев', 'Кемерово','1254602'),
        (19, 'Фёдор', 'Руденко', 'Донецк','7433465'),

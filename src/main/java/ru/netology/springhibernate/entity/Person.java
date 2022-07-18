@@ -5,6 +5,7 @@ import org.hibernate.Hibernate;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.Objects;
 
 @Getter
@@ -12,6 +13,7 @@ import java.util.Objects;
 @ToString
 @RequiredArgsConstructor
 @Entity
+@Table(name = "persons")
 @AllArgsConstructor
 public class Person {
 

@@ -1,4 +1,4 @@
-create table person (
+create table persons (
                          name            varchar(255) not null,
                          surname         varchar(255) not null,
                          age             int check ( age >= 0 ),
